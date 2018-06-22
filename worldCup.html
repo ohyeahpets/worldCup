@@ -3,23 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <title>媒介圈-世界杯活动页面</title>
+    <link rel="stylesheet" href="css/swiper-4.2.0.min.css">
     <link rel="stylesheet" href="css/p_reset.css">
     <link rel="stylesheet" href="css/worldCup.css">
     <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/swiper-4.2.0.min.js"></script>
 </head>
 <body>
-    <div class="world-top"></div>
-    <div class="world-main">
-        <div class="common_w world-main-con">
-            <div class="jiuqiu">
-                <div style="position: relative;height: 100%">
-                    <a href="javascript:void(0);" class="jinqiu_btn">
-                        <p>今日踢球剩余次数：3次</p>
-                    </a>
+<div class="world-top"></div>
+<div class="world-main">
+    <div class="common_w world-main-con">
+        <div class="jiuqiu">
+            <div style="position: relative;height: 100%">
+                <a href="javascript:void(0);" class="jinqiu_btn">
+                    <p>今日踢球剩余次数：3次</p>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="fl zjWrapper">
+                <div class="zj_num clearfix">
+                    <div class="num_item">
+                        <img src="images/wc-icon1.png" alt="">
+                        已下单数：15次
+                    </div>
+                    <div class="num_item">
+                        <img src="images/wc-icon2.png" alt="">
+                        已竞猜数：5次
+                    </div>
+                </div>
+            </div>
+            <div class="fl jpWrapper">
+                <div class="zj-warning clearfix">
+                    <div class="fl zw-item" id="prize">
+                        <p>我的奖品</p>
+                    </div>
+                    <div class="fl zw-item" id="rule">
+                        <p>活动规则</p>
+                    </div>
+                </div>
+                <p class="jp_num">今日抽奖次数：3次</p>
+                <div class="zjUserWrapper">
+                    <div class="zuw_top"></div>
+                    <div class="zuw_detail">
+                        <div class="titleWrapper">
+                            <div class="title">幸运中奖用户</div>
+                        </div>
+                        <div class="detailWrapper">
+                            <ul class="clearfix">
+                                <li class="fl dw-item dw-item-first">用户名</li>
+                                <li class="fl dw-item dw-item-first">联系方式</li>
+                                <li class="fl dw-item dw-item-first">奖品名称</li>
+                            </ul>
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <ul class="clearfix">
+                                            <li class="fl dw-item">张1</li>
+                                            <li class="fl dw-item">139******321</li>
+                                            <li class="fl dw-item">10元代金券</li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <ul class="clearfix">
+                                            <li class="fl dw-item">张2</li>
+                                            <li class="fl dw-item">139******321</li>
+                                            <li class="fl dw-item">10元代金券</li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <ul class="clearfix">
+                                            <li class="fl dw-item">张3</li>
+                                            <li class="fl dw-item">139******321</li>
+                                            <li class="fl dw-item">10元代金券</li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <ul class="clearfix">
+                                            <li class="fl dw-item">张4</li>
+                                            <li class="fl dw-item">139******321</li>
+                                            <li class="fl dw-item">10元代金券</li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <ul class="clearfix">
+                                            <li class="fl dw-item">张5</li>
+                                            <li class="fl dw-item">139******321</li>
+                                            <li class="fl dw-item">10元代金券</li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <ul class="clearfix">
+                                            <li class="fl dw-item">张6</li>
+                                            <li class="fl dw-item">139******321</li>
+                                            <li class="fl dw-item">10元代金券</li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <ul class="clearfix">
+                                            <li class="fl dw-item">张7</li>
+                                            <li class="fl dw-item">139******321</li>
+                                            <li class="fl dw-item">10元代金券</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-<script></script>
+</div>
+<div class="rule_wrapper">
+    <div class="title">
+        活动规则
+        <span class="close_rule" id="close_rule">×</span>
+    </div>
+    <div class="group clearfix">
+        <div class="group-title fl">
+            活动时间：
+        </div>
+        <div class="group-text fl">
+            <p class="gt_xuanxiang">2018年7月1日-2018年7月15日</p>
+        </div>
+    </div>
+    <div class="group clearfix">
+        <div class="group-title fl">
+            踢球规则：
+        </div>
+        <div class="group-text fl">
+            <p class="gt_xuanxiang">1. 活动期间，点击踢球，进球成功的用户，可以参与抽奖。</p>
+            <p class="gt_xuanxiang">2. 踢球机会可通过4种途径获得：</p>
+            <p class="gt_desc">• 注册或登陆仅可赠送1次；</p>
+            <p class="gt_desc">• 每发布稿件(已付款)10次，可获赠1次，该渠道每日最多可获得5次。</p>
+            <p class="gt_desc">• 参与竞猜活动，则可获赠1次踢球机会；</p>
+            <p class="gt_desc">• 成功将活动页面分享至朋友圈，并保持不删除（加媒介圈-安琪微信：rws099 为好友验证）可获赠3次机会，该渠道在活动期间最多可获得3次机会；</p>
+        </div>
+    </div>
+    <div class="group clearfix">
+        <div class="group-title fl">
+            竞猜规则：
+        </div>
+        <div class="group-text fl">
+            <p class="gt_xuanxiang">1. 竞猜时间：07.01开始每日06：00-18：00</p>
+            <p class="gt_desc">（参与竞猜后，次日上午10：00公布竞猜结果）</p>
+            <p class="gt_xuanxiang">2. 用户每日可获得1次竞猜活动机会</p>
+            <p class="gt_xuanxiang">3.活动期间，连续竞猜正确3次，即可参与10000万元瓜分，每人仅可瓜分1次。</p>
+            <p class="gt_desc">（10000元现金将于7月16日09:00开始瓜分，将以现金红包的方式发送，请及时加”媒介圈——安琪（微信号：rws099）“为好友。</p>
+            <p class="gt_desc">如遇“10000元除不尽”的情况，则按照四舍五入法精确到角。）</p>
+        </div>
+    </div>
+    <div class="group clearfix">
+        <div class="group-title fl">
+            奖品说明：
+        </div>
+        <div class="group-text fl">
+            <p class="gt_xuanxiang">1. 获赠的代金券，有效期截止至7月16日。过期不用则自动作废。 </p>
+            <p class="gt_xuanxiang">2. 所有代金券奖品将由系统即时自动发放，现金红包等将由工作人员联系登记之后，统一在活动结束后3个工作日内发放。</p>
+            <p class="gt_xuanxiang">3. 创意内容撰写奖励将由工作人员联系后，根据相应的需求进行内容创意策划与撰写。</p>
+        </div>
+    </div>
+</div>
+<div class="prize_wrapper">
+    <div class="title">
+        我的奖品
+        <span class="close_prize" id="close_prize">×</span>
+    </div>
+    <ul class="clearfix">
+        <li class="fl prize_item prize_title">奖品名称</li>
+        <li class="fl prize_item prize_title">获得时间</li>
+        <li class="fl prize_item prize_title">状态</li>
+    </ul>
+    <ul class="clearfix">
+        <li class="fl prize_item">8.8代金券</li>
+        <li class="fl prize_item">2018.06.12</li>
+        <li class="fl prize_item">已发放</li>
+    </ul>
+    <ul class="clearfix">
+        <li class="fl prize_item">8.8代金券</li>
+        <li class="fl prize_item">2018.06.12</li>
+        <li class="fl prize_item">已发放</li>
+    </ul>
+    <ul class="clearfix">
+        <li class="fl prize_item">8.8代金券</li>
+        <li class="fl prize_item">2018.06.12</li>
+        <li class="fl prize_item">已发放</li>
+    </ul>
+    <ul class="clearfix">
+        <li class="fl prize_item">8.8代金券</li>
+        <li class="fl prize_item">2018.06.12</li>
+        <li class="fl prize_item">已发放</li>
+    </ul>
+    <ul class="clearfix">
+        <li class="fl prize_item">8.8代金券</li>
+        <li class="fl prize_item">2018.06.12</li>
+        <li class="fl prize_item">已发放</li>
+    </ul>
+    <ul class="clearfix">
+        <li class="fl prize_item">8.8代金券</li>
+        <li class="fl prize_item">2018.06.12</li>
+        <li class="fl prize_item">已发放</li>
+    </ul>
+</div>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: true,//可选选项，自动滑动
+        direction: 'vertical',
+        height: 266,
+        loop: true,
+        slidesPerView: 7
+    })
+
+    $('#rule').click(function () {
+        var rule_layer = $('.rule_wrapper'),
+            prize_lay = $('.prize_wrapper');
+        if (prize_lay.is(':visible')) {
+            prize_lay.hide()
+        }
+        rule_layer.show();
+        $('#close_rule').click(function () {
+            rule_layer.hide()
+        })
+    })
+
+    $('#prize').click(function () {
+        var prize_layer = $('.prize_wrapper');
+        prize_layer.show();
+        $('#close_prize').click(function () {
+            prize_layer.hide()
+        })
+    })
+</script>
 </body>
 </html>

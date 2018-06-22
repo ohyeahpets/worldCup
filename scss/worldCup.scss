@@ -1,33 +1,41 @@
 $bgColor: #7fc7f7;
+$greenColor:#317307;
+$detailTextColor:#999;
 body {
   background: $bgColor;
 }
-.common_w{
+
+.common_w {
   width: 1200px;
   margin: 0 auto;
 }
-.world-top{
+
+img {
+  vertical-align: middle;
+}
+
+.world-top {
   width: 100%;
   padding-bottom: 51.6666%;
   background: url("../images/topBg_01.png") no-repeat center;
   background-size: cover;
 }
-.world-main{
+
+.world-main {
   margin-top: -6.5%;
   height: 1203px;
   background: url("../images/world-main_02.png") no-repeat center;
-  .world-main-con{
+  .world-main-con {
     height: 100%;
     position: relative;
-    .jiuqiu{
+    overflow: hidden;
+    .jiuqiu {
       width: 768px;
       height: 348px;
       background: url("../images/jinqiu.png") no-repeat center;
-      position: absolute;
-      left: 50%;
-      margin-left: -384px;
-      top:58px;
-      .jinqiu_btn{
+      margin: 0 auto;
+      margin-top: 58px;
+      .jinqiu_btn {
         position: absolute;
         display: block;
         width: 297px;
@@ -35,12 +43,203 @@ body {
         top: 190px;
         right: 111px;
         background: url("../images/jinqiu_btn.png") no-repeat;
-        p{
+        p {
           color: #bb6017;
           text-align: center;
           margin-top: 68px;
         }
       }
+    }
+  }
+}
+
+.zjWrapper {
+  width: 670px;
+  .zj_num {
+    .num_item {
+      width: 50%;
+      text-align: center;
+      padding: 60px 0;
+      color: #333;
+      float: left;
+      font-size: 20px;
+    }
+  }
+}
+
+.jpWrapper {
+  width: 530px;
+  box-sizing: border-box;
+  padding: 0px 94px;
+  .zjUserWrapper{
+    .zuw_top{
+      height: 10px;
+      background: #54ad18;
+    }
+    .zuw_detail{
+      margin: 0 6px;
+      background: #e3f6ca;
+      padding: 0 20px;
+      .titleWrapper{
+        padding: 0 44px;
+        margin-bottom: 15px;
+      }
+      .detailWrapper{
+        height: 300px;
+        overflow: hidden;
+        .dw-item{
+          width: 33.333%;
+          text-align: center;
+          font-size: 12px;
+          color: #333;
+          margin-bottom: 20px;
+          &.dw-item-first{
+            font-weight: bold;
+          }
+        }
+      }
+      .title{
+        color: #255c00;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        padding: 13px 0;
+        border-bottom: 2px solid #54ad18;
+      }
+    }
+  }
+  .jp_num{
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 63px;
+    margin-bottom: 38px;
+  }
+  .zj-warning {
+    margin: 21.5px 0px;
+  }
+  .zw-item {
+    background: url("../images/zj_btn_warn.png") no-repeat;
+    width: 137px;
+    height: 117px;
+    position: relative;
+    cursor: pointer;
+    &:first-child {
+      margin-right: 68px;
+    }
+    p {
+      position: absolute;
+      left: 50%;
+      color: #e63928;
+      font-size: 17.82px;
+      font-weight: bold;
+      margin-left: -31.64px;
+      top: 38px;
+    }
+  }
+}
+
+.rule_wrapper{
+  display: none;
+  width: 1052px;
+  background: #f2ffe8;
+  padding: 14px 20px 52px 48px;
+  border-radius: 10px;
+  position: fixed;
+  left: 50%;
+  margin-left: -554px;
+  top: 50%;
+  margin-top: -327px;
+  z-index: 9;
+  .title{
+    font-size: 24px;
+    color:$greenColor;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    .close_rule{
+      background: #317307;
+      font-size: 24px;
+      color: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+    }
+  }
+  .group{
+    margin-bottom: 17px;
+    .group-title{
+      line-height: 1.75;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    .group-text{
+      line-height: 2;
+      padding-left: 8px;
+      .gt_xuanxiang{
+        font-size: 16px;
+        color: #666;
+      }
+      .gt_desc{
+        text-indent: 1.5em;
+        font-size: 14px;
+        color: $detailTextColor;
+      }
+    }
+  }
+}
+.prize_wrapper{
+  display: none;
+  background: #f2ffe8;
+  padding: 14px 20px;
+  border-radius: 10px;
+  width:370px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -205px;
+  margin-top: -178px;
+  z-index: 9;
+  height: 356px;
+  overflow: hidden;
+  ul:last-child{
+    margin-bottom: 12px;
+  }
+  .prize_item{
+    font-size: 14px;
+    color: #666;
+    width: 33.33%;
+    text-align: center;
+    margin-top: 19px;
+    &.prize_title{
+      font-weight: bold;
+      color: #333333;
+    }
+  }
+  .title{
+    font-size: 24px;
+    color:$greenColor;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    .close_prize{
+      background: #317307;
+      font-size: 24px;
+      color: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      position: absolute;
+      right: 0;
+      cursor: pointer;
     }
   }
 }
