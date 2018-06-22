@@ -1,0 +1,46 @@
+$bgColor: #7fc7f7;
+body {
+  background: $bgColor;
+}
+.common_w{
+  width: 1200px;
+  margin: 0 auto;
+}
+.world-top{
+  width: 100%;
+  padding-bottom: 51.6666%;
+  background: url("../images/topBg_01.png") no-repeat center;
+  background-size: cover;
+}
+.world-main{
+  margin-top: -6.5%;
+  height: 1203px;
+  background: url("../images/world-main_02.png") no-repeat center;
+  .world-main-con{
+    height: 100%;
+    position: relative;
+    .jiuqiu{
+      width: 768px;
+      height: 348px;
+      background: url("../images/jinqiu.png") no-repeat center;
+      position: absolute;
+      left: 50%;
+      margin-left: -384px;
+      top:58px;
+      .jinqiu_btn{
+        position: absolute;
+        display: block;
+        width: 297px;
+        height: 115px;
+        top: 190px;
+        right: 111px;
+        background: url("../images/jinqiu_btn.png") no-repeat;
+        p{
+          color: #bb6017;
+          text-align: center;
+          margin-top: 68px;
+        }
+      }
+    }
+  }
+}
