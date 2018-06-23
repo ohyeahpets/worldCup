@@ -1,6 +1,17 @@
 body {
   background: #7fc7f7; }
 
+.prize_layer, .rule_layer {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); }
+
 .common_w {
   width: 1200px;
   margin: 0 auto; }
@@ -109,16 +120,15 @@ img {
       top: 38px; }
 
 .rule_wrapper {
-  display: none;
   width: 1052px;
   background: #f2ffe8;
-  padding: 14px 20px 52px 48px;
+  padding: 14px 20px 18px 48px;
   border-radius: 10px;
   position: fixed;
   left: 50%;
   margin-left: -554px;
   top: 50%;
-  margin-top: -327px;
+  margin-top: -310px;
   z-index: 9; }
   .rule_wrapper .title {
     font-size: 24px;
@@ -157,7 +167,6 @@ img {
         color: #999; }
 
 .prize_wrapper {
-  display: none;
   background: #f2ffe8;
   padding: 14px 20px;
   border-radius: 10px;
