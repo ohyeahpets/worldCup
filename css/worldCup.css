@@ -264,4 +264,26 @@ img {
       right: 0;
       cursor: pointer; }
 
+.world-guess .wg-content {
+  background: #ffffff;
+  overflow: hidden; }
+.world-guess .wg-title {
+  font-size: 42px;
+  color: #036ab0;
+  font-weight: bold;
+  margin-top: 35px; }
+.world-guess .wg-text {
+  color: #999; }
+.world-guess .wg-time {
+  font-size: 24px;
+  color: #333333;
+  text-align: center;
+  margin-top: 6px; }
+  .world-guess .wg-time .wg-time-daojishi {
+    display: inline-block;
+    font-size: 36px;
+    letter-spacing: 4px; }
+    .world-guess .wg-time .wg-time-daojishi span {
+      font-weight: bold; }
+
 /*# sourceMappingURL=worldCup.css.map */

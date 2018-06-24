@@ -124,6 +124,17 @@
         </div>
     </div>
 </div>
+<div class="world-guess">
+    <div class="common_w wg-content">
+        <div class="wg-title text-center">猜对有奖，瓜分万元！</div>
+        <p class="wg-text text-center">(连续竞猜正确3次，即可参加万元瓜分！没人仅可瓜分一次)</p>
+        <div class="wg-time">
+            <img src="images/time-daojishi.png" alt="沙漏" style="margin-top: -10px;">
+            <span style="position: relative;top: -4px;">瓜分倒计时：</span>
+            <p class="wg-time-daojishi" id="timer"><span>13</span>天<span>03</span>时<span>30</span>分<span>10</span>秒</p>
+        </div>
+    </div>
+</div>
 <div class="rule_layer">
     <div class="rule_wrapper">
         <div class="title">
@@ -240,7 +251,8 @@
         loop: true,
         slidesPerView: 7
     })
-
+    // 剩余多少时间
+    leftTimer(2018,7,7,19,57,10);
     $('#rule').click(function () {
         var rule_layer = $('.rule_layer');
         rule_layer.show();
@@ -319,6 +331,27 @@
         var imgs = document.getElementsByTagName('img');
         for (var i = 0; i < imgs.length; i++)
             imgs[i].src = imgs[i].src;
+    }
+
+    function leftTimer(year, month, day, hour, minute, second) {
+        var leftTime = (new Date(year, month - 1, day, hour, minute, second)) - (new Date()); //计算剩余的毫秒数
+        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
+        var hours = parseInt(leftTime / 1000 / 60 / 60 % 24, 10); //计算剩余的小时
+        var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟
+        var seconds = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数
+        days = checkTime(days);
+        hours = checkTime(hours);
+        minutes = checkTime(minutes);
+        seconds = checkTime(seconds);
+        setInterval("leftTimer(2018,7,7,19,57,10)", 1000);
+        document.getElementById("timer").innerHTML = '<span>' + days + '</span>' + "天" + '<span>' + hours + '</span>' + "时" + '<span>' + minutes + '</span>' + "分" + '<span>' + seconds + '</span>' + "秒";
+    }
+
+    function checkTime(i) { //将0-9的数字前面加上0，例1变为01
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
     }
 </script>
 </body>
