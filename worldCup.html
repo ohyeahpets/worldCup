@@ -15,8 +15,17 @@
     <div class="common_w world-main-con">
         <div class="jiuqiu">
             <div style="position: relative;height: 100%">
+                <div class="jinqiu_shoot" style="display: block;">
+                    <img src="images/shootStart.png" alt="射门">
+                </div>
+                <!--<div class="jinqiu_shoot">-->
+                <!--<img src="images/shootJin.gif" alt="射门">-->
+                <!--</div>-->
+                <!--<div class="jinqiu_shoot">-->
+                <!--<img src="images/shootMeiJin.gif" alt="射门">-->
+                <!--</div>-->
                 <a href="javascript:void(0);" class="jinqiu_btn">
-                    <p>今日踢球剩余次数：3次</p>
+                    <p>今日踢球剩余次数：<span id="tiqiu_num">3</span>次</p>
                 </a>
             </div>
         </div>
@@ -210,6 +219,19 @@
         </ul>
     </div>
 </div>
+<div class="wrapper_layer" id="wrapper_layer">
+    <div class="wrapper">
+        <span class="close" id="close">×</span>
+        <div class="text-center  imgWrapper" style="margin-top: 10px;">
+            <img src="images/p_laugh.png" alt="">
+        </div>
+        <p class="text-center tips">恭喜你，球进了！</p>
+        <div class="user-operarion">
+            <a href="#" class="uo_btn">开始抽奖</a>
+            <a href="#" class="uo_btn">去下单</a>
+        </div>
+    </div>
+</div>
 <script>
     var mySwiper = new Swiper('.swiper-container', {
         autoplay: true,//可选选项，自动滑动
@@ -234,6 +256,70 @@
             prize_layer.hide()
         })
     })
+
+    $('#close').click(function () {
+        $(this).closest('#wrapper_layer').hide()
+    })
+
+    var goal_desc = [{text: '恭喜你，球进了！', imgUrl: 'images/p_laugh.png'}, {
+        text: '很遗憾，没有进球',
+        imgUrl: 'images/p_cry.png'
+    }];
+    // 点击踢球
+    $('.jinqiu_btn').click(function () {
+        // 获取踢球剩余次数
+        var tiqiu_num = $('#tiqiu_num').text();
+        if (tiqiu_num == 0) {
+            // 弹出提示显示
+            $('#tiqiu_num').text(tiqiu_num);
+            return false;
+        }
+        // 两种情况,进球和没进球的概率
+        var a = ['goal', 'no_goal'],
+            b = [0.3, 0.7],
+            is_goal = random(a, b);
+        imgReload();
+        if (is_goal == 'goal') {
+            $('.jinqiu_shoot').find('img').attr('src', 'images/shootJin.gif')
+            // 弹出进球提示框
+            setTimeout(function () {
+                $('#wrapper_layer').show().find('.imgWrapper img').attr('src', goal_desc[0].imgUrl)
+                    .end().find('.tips').text(goal_desc[0].text)
+            }, 1700)
+        } else {
+            $('.jinqiu_shoot').find('img').attr('src', 'images/shootMeiJin.gif')
+            // 弹出没进球提示框
+            setTimeout(function () {
+                $('#wrapper_layer').show().find('.imgWrapper img').attr('src', goal_desc[1].imgUrl)
+                    .end().find('.tips').text(goal_desc[1].text)
+            }, 1700)
+        }
+        tiqiu_num--;
+        $('#tiqiu_num').text(tiqiu_num);
+    })
+
+    function random(arr1, arr2) {
+        var sum = 0,
+            factor = 0,
+            random = Math.random();
+
+        for (var i = arr2.length - 1; i >= 0; i--) {
+            sum += arr2[i]; // 统计概率总和
+        }
+        random *= sum; // 生成概率随机数
+        for (var i = arr2.length - 1; i >= 0; i--) {
+            factor += arr2[i];
+            if (random <= factor)
+                return arr1[i];
+        }
+        return null;
+    }
+
+    function imgReload() {
+        var imgs = document.getElementsByTagName('img');
+        for (var i = 0; i < imgs.length; i++)
+            imgs[i].src = imgs[i].src;
+    }
 </script>
 </body>
 </html>
