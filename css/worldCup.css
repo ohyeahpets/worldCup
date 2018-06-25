@@ -1,10 +1,14 @@
 body {
-  background: #7fc7f7; }
+  background: #7fc7f7;
+  overflow-x: hidden; }
 
 .text-center {
   text-align: center; }
 
-.prize_layer, .rule_layer, .wrapper_layer {
+.prize_layer,
+.rule_layer,
+.wrapper_layer,
+.invite_layer {
   display: none;
   width: 100%;
   height: 100%;
@@ -15,6 +19,54 @@ body {
   bottom: 0;
   background: rgba(0, 0, 0, 0.3);
   z-index: 1; }
+
+.invite_layer .wrapper {
+  width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -210px;
+  transform: translateY(-50%);
+  background: #f2ffe8; }
+  .invite_layer .wrapper .user-operarion {
+    margin-bottom: 20px;
+    text-align: center; }
+    .invite_layer .wrapper .user-operarion .uo_btn {
+      display: inline-block;
+      font-size: 24px;
+      padding: 5px 40px;
+      border-radius: 24px;
+      background: #44980e;
+      box-shadow: 0px 5px 0px #317307;
+      color: #ffffff;
+      margin-left: 15px; }
+  .invite_layer .wrapper .text_wrapper {
+    padding: 0 25px; }
+  .invite_layer .wrapper .text {
+    font-size: 16px;
+    color: #317307; }
+    .invite_layer .wrapper .text:first-child {
+      margin-top: 50px;
+      line-height: 2; }
+    .invite_layer .wrapper .text.text_copy {
+      margin-top: 8px;
+      margin-bottom: 45px; }
+  .invite_layer .wrapper .close {
+    background: #317307;
+    font-size: 24px;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    text-align: center; }
 
 .wrapper_layer .wrapper {
   width: 400px;
@@ -93,7 +145,8 @@ img {
         display: none;
         position: absolute;
         top: -253px;
-        left: 12%; }
+        left: 12%;
+        z-index: 1; }
       .world-main .world-main-con .jiuqiu .jinqiu_btn {
         position: absolute;
         display: block;
@@ -264,26 +317,171 @@ img {
       right: 0;
       cursor: pointer; }
 
+.world-guess .guess_submit {
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 22px;
+  border-radius: 10px;
+  background: #036ab0;
+  text-align: center;
+  padding: 8px 0;
+  outline: none;
+  margin-top: 15px;
+  margin-bottom: 35px; }
+.world-guess .myGuess {
+  margin-top: 40px; }
+  .world-guess .myGuess .myGuessContent {
+    color: #333333;
+    background: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    margin-top: 12px;
+    border-radius: 15px;
+    font-size: 16px; }
+    .world-guess .myGuess .myGuessContent li {
+      padding: 9.5px 0; }
+    .world-guess .myGuess .myGuessContent li span {
+      display: inline-block; }
+      .world-guess .myGuess .myGuessContent li span.country {
+        width: 130px;
+        text-align: center; }
+      .world-guess .myGuess .myGuessContent li span.guess {
+        color: #4bbb00; }
+      .world-guess .myGuess .myGuessContent li span.guessing {
+        color: #999; }
+      .world-guess .myGuess .myGuessContent li span.notguess {
+        color: #e63928; }
+  .world-guess .myGuess .mg-title {
+    position: relative; }
+    .world-guess .myGuess .mg-title h3 {
+      font-size: 22px;
+      color: #333333;
+      font-weight: normal; }
+    .world-guess .myGuess .mg-title .text {
+      color: #999;
+      position: absolute;
+      left: 100px;
+      top: 6px; }
+.world-guess .guess-item .guess-touzhu .guess-touzhu-choice {
+  width: 50%;
+  float: left;
+  margin-bottom: 18px; }
+  .world-guess .guess-item .guess-touzhu .guess-touzhu-choice .touzhu {
+    font-size: 16px;
+    color: #999;
+    margin-top: 15px;
+    margin-bottom: 8px; }
+  .world-guess .guess-item .guess-touzhu .guess-touzhu-choice .choice_btn {
+    display: block;
+    font-size: 18px;
+    color: #666666;
+    padding: 10px 0;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+    border-radius: 28px;
+    margin: 0 10px;
+    box-sizing: border-box;
+    height: 47px; }
+    .world-guess .guess-item .guess-touzhu .guess-touzhu-choice .choice_btn.acitve {
+      background: url(../images/select-team.png) no-repeat;
+      background-size: cover;
+      border: none;
+      color: #FFFFFF; }
+    .world-guess .guess-item .guess-touzhu .guess-touzhu-choice .choice_btn.selectedActive {
+      background: url(../images/has-select-team.png) no-repeat;
+      background-size: cover;
+      border: none;
+      color: #FFFFFF; }
+.world-guess .guess-item .bisai-project {
+  color: #333333;
+  background: #f8f8f8;
+  padding: 30px 0;
+  text-align: center;
+  margin-top: 12px;
+  border-radius: 15px; }
+  .world-guess .guess-item .bisai-project.spec {
+    padding: 23px 0; }
+    .world-guess .guess-item .bisai-project.spec i {
+      font-size: 20px; }
+      .world-guess .guess-item .bisai-project.spec i img {
+        margin: 0 15px;
+        width: 36px;
+        height: 37px; }
+    .world-guess .guess-item .bisai-project.spec span {
+      position: relative;
+      top: 5px; }
+  .world-guess .guess-item .bisai-project i {
+    font-size: 22px;
+    font-style: normal;
+    display: inline-block; }
+    .world-guess .guess-item .bisai-project i img {
+      margin: 0 15px; }
+  .world-guess .guess-item .bisai-project span {
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    top: 5px; }
 .world-guess .wg-content {
-  background: #ffffff;
-  overflow: hidden; }
+  margin-top: 50px;
+  background: url(../images/guess_bg.png) no-repeat;
+  background-size: contain;
+  position: relative; }
+  .world-guess .wg-content.wg-content-one {
+    background: url(../images/guess_bg_one.png) no-repeat;
+    background-size: contain; }
+  .world-guess .wg-content .wg_cloud_left {
+    position: absolute;
+    top: 418.5px;
+    margin-top: -56.5px;
+    left: -165px;
+    z-index: -1; }
+  .world-guess .wg-content .wg_cloud_right {
+    position: absolute;
+    top: 418.5px;
+    margin-top: -56.5px;
+    right: -170px;
+    z-index: -1; }
 .world-guess .wg-title {
   font-size: 42px;
   color: #036ab0;
   font-weight: bold;
-  margin-top: 35px; }
+  padding-top: 35px; }
 .world-guess .wg-text {
   color: #999; }
 .world-guess .wg-time {
   font-size: 24px;
   color: #333333;
   text-align: center;
-  margin-top: 6px; }
+  margin-top: 13px; }
   .world-guess .wg-time .wg-time-daojishi {
     display: inline-block;
     font-size: 36px;
     letter-spacing: 4px; }
     .world-guess .wg-time .wg-time-daojishi span {
       font-weight: bold; }
+.world-guess .todayWrapper {
+  margin-top: 20px;
+  padding-bottom: 38px; }
+  .world-guess .todayWrapper .today-group {
+    width: 473px;
+    padding-left: 22px;
+    padding-right: 105px; }
+    .world-guess .todayWrapper .today-group:first-child {
+      padding-left: 105px;
+      padding-right: 22px; }
+    .world-guess .todayWrapper .today-group .tg-title {
+      position: relative; }
+      .world-guess .todayWrapper .today-group .tg-title h3 {
+        font-size: 22px;
+        color: #333333;
+        font-weight: normal; }
+      .world-guess .todayWrapper .today-group .tg-title .text {
+        color: #999;
+        position: absolute;
+        right: 0;
+        top: 6px; }
+
+.world_footer {
+  padding: 30px 0; }
 
 /*# sourceMappingURL=worldCup.css.map */

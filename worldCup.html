@@ -1,358 +1,661 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>媒介圈-世界杯活动页面</title>
-    <link rel="stylesheet" href="css/swiper-4.2.0.min.css">
-    <link rel="stylesheet" href="css/p_reset.css">
-    <link rel="stylesheet" href="css/worldCup.css">
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/swiper-4.2.0.min.js"></script>
-</head>
-<body>
-<div class="world-top"></div>
-<div class="world-main">
-    <div class="common_w world-main-con">
-        <div class="jiuqiu">
-            <div style="position: relative;height: 100%">
-                <div class="jinqiu_shoot" style="display: block;">
-                    <img src="images/shootStart.png" alt="射门">
-                </div>
-                <!--<div class="jinqiu_shoot">-->
-                <!--<img src="images/shootJin.gif" alt="射门">-->
-                <!--</div>-->
-                <!--<div class="jinqiu_shoot">-->
-                <!--<img src="images/shootMeiJin.gif" alt="射门">-->
-                <!--</div>-->
-                <a href="javascript:void(0);" class="jinqiu_btn">
-                    <p>今日踢球剩余次数：<span id="tiqiu_num">3</span>次</p>
-                </a>
-            </div>
-        </div>
-        <div class="clearfix">
-            <div class="fl zjWrapper">
-                <div class="zj_num clearfix">
-                    <div class="num_item">
-                        <img src="images/wc-icon1.png" alt="">
-                        已下单数：15次
-                    </div>
-                    <div class="num_item">
-                        <img src="images/wc-icon2.png" alt="">
-                        已竞猜数：5次
-                    </div>
-                </div>
-            </div>
-            <div class="fl jpWrapper">
-                <div class="zj-warning clearfix">
-                    <div class="fl zw-item" id="prize">
-                        <p>我的奖品</p>
-                    </div>
-                    <div class="fl zw-item" id="rule">
-                        <p>活动规则</p>
-                    </div>
-                </div>
-                <p class="jp_num">今日抽奖次数：3次</p>
-                <div class="zjUserWrapper">
-                    <div class="zuw_top"></div>
-                    <div class="zuw_detail">
-                        <div class="titleWrapper">
-                            <div class="title">幸运中奖用户</div>
-                        </div>
-                        <div class="detailWrapper">
-                            <ul class="clearfix">
-                                <li class="fl dw-item dw-item-first">用户名</li>
-                                <li class="fl dw-item dw-item-first">联系方式</li>
-                                <li class="fl dw-item dw-item-first">奖品名称</li>
-                            </ul>
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <ul class="clearfix">
-                                            <li class="fl dw-item">张1</li>
-                                            <li class="fl dw-item">139******321</li>
-                                            <li class="fl dw-item">10元代金券</li>
-                                        </ul>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <ul class="clearfix">
-                                            <li class="fl dw-item">张2</li>
-                                            <li class="fl dw-item">139******321</li>
-                                            <li class="fl dw-item">10元代金券</li>
-                                        </ul>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <ul class="clearfix">
-                                            <li class="fl dw-item">张3</li>
-                                            <li class="fl dw-item">139******321</li>
-                                            <li class="fl dw-item">10元代金券</li>
-                                        </ul>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <ul class="clearfix">
-                                            <li class="fl dw-item">张4</li>
-                                            <li class="fl dw-item">139******321</li>
-                                            <li class="fl dw-item">10元代金券</li>
-                                        </ul>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <ul class="clearfix">
-                                            <li class="fl dw-item">张5</li>
-                                            <li class="fl dw-item">139******321</li>
-                                            <li class="fl dw-item">10元代金券</li>
-                                        </ul>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <ul class="clearfix">
-                                            <li class="fl dw-item">张6</li>
-                                            <li class="fl dw-item">139******321</li>
-                                            <li class="fl dw-item">10元代金券</li>
-                                        </ul>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <ul class="clearfix">
-                                            <li class="fl dw-item">张7</li>
-                                            <li class="fl dw-item">139******321</li>
-                                            <li class="fl dw-item">10元代金券</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="world-guess">
-    <div class="common_w wg-content">
-        <div class="wg-title text-center">猜对有奖，瓜分万元！</div>
-        <p class="wg-text text-center">(连续竞猜正确3次，即可参加万元瓜分！没人仅可瓜分一次)</p>
-        <div class="wg-time">
-            <img src="images/time-daojishi.png" alt="沙漏" style="margin-top: -10px;">
-            <span style="position: relative;top: -4px;">瓜分倒计时：</span>
-            <p class="wg-time-daojishi" id="timer"></p>
-        </div>
-    </div>
-</div>
-<div class="rule_layer">
-    <div class="rule_wrapper">
-        <div class="title">
-            活动规则
-            <span class="close_rule" id="close_rule">×</span>
-        </div>
-        <div class="group clearfix">
-            <div class="group-title fl">
-                活动时间：
-            </div>
-            <div class="group-text fl">
-                <p class="gt_xuanxiang">2018年7月1日-2018年7月15日</p>
-            </div>
-        </div>
-        <div class="group clearfix">
-            <div class="group-title fl">
-                踢球规则：
-            </div>
-            <div class="group-text fl">
-                <p class="gt_xuanxiang">1. 活动期间，点击踢球，进球成功的用户，可以参与抽奖。</p>
-                <p class="gt_xuanxiang">2. 踢球机会可通过4种途径获得：</p>
-                <p class="gt_desc">• 注册或登陆仅可赠送1次；</p>
-                <p class="gt_desc">• 每发布稿件(已付款)10次，可获赠1次，该渠道每日最多可获得5次。</p>
-                <p class="gt_desc">• 参与竞猜活动，则可获赠1次踢球机会；</p>
-                <p class="gt_desc">• 成功将活动页面分享至朋友圈，并保持不删除（加媒介圈-安琪微信：rws099 为好友验证）可获赠3次机会，该渠道在活动期间最多可获得3次机会；</p>
-            </div>
-        </div>
-        <div class="group clearfix">
-            <div class="group-title fl">
-                竞猜规则：
-            </div>
-            <div class="group-text fl">
-                <p class="gt_xuanxiang">1. 竞猜时间：07.01开始每日06：00-18：00</p>
-                <p class="gt_desc">（参与竞猜后，次日上午10：00公布竞猜结果）</p>
-                <p class="gt_xuanxiang">2. 用户每日可获得1次竞猜活动机会</p>
-                <p class="gt_xuanxiang">3.活动期间，连续竞猜正确3次，即可参与10000万元瓜分，每人仅可瓜分1次。</p>
-                <p class="gt_desc">（10000元现金将于7月16日09:00开始瓜分，将以现金红包的方式发送，请及时加”媒介圈——安琪（微信号：rws099）“为好友。</p>
-                <p class="gt_desc">如遇“10000元除不尽”的情况，则按照四舍五入法精确到角。）</p>
-            </div>
-        </div>
-        <div class="group clearfix">
-            <div class="group-title fl">
-                奖品说明：
-            </div>
-            <div class="group-text fl">
-                <p class="gt_xuanxiang">1. 获赠的代金券，有效期截止至7月16日。过期不用则自动作废。 </p>
-                <p class="gt_xuanxiang">2. 所有代金券奖品将由系统即时自动发放，现金红包等将由工作人员联系登记之后，统一在活动结束后3个工作日内发放。</p>
-                <p class="gt_xuanxiang">3. 创意内容撰写奖励将由工作人员联系后，根据相应的需求进行内容创意策划与撰写。</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="prize_layer">
-    <div class="prize_wrapper">
-        <div class="title">
-            我的奖品
-            <span class="close_prize" id="close_prize">×</span>
-        </div>
-        <ul class="clearfix">
-            <li class="fl prize_item prize_title">奖品名称</li>
-            <li class="fl prize_item prize_title">获得时间</li>
-            <li class="fl prize_item prize_title">状态</li>
-        </ul>
-        <ul class="clearfix">
-            <li class="fl prize_item">8.8代金券</li>
-            <li class="fl prize_item">2018.06.12</li>
-            <li class="fl prize_item">已发放</li>
-        </ul>
-        <ul class="clearfix">
-            <li class="fl prize_item">8.8代金券</li>
-            <li class="fl prize_item">2018.06.12</li>
-            <li class="fl prize_item">已发放</li>
-        </ul>
-        <ul class="clearfix">
-            <li class="fl prize_item">8.8代金券</li>
-            <li class="fl prize_item">2018.06.12</li>
-            <li class="fl prize_item">已发放</li>
-        </ul>
-        <ul class="clearfix">
-            <li class="fl prize_item">8.8代金券</li>
-            <li class="fl prize_item">2018.06.12</li>
-            <li class="fl prize_item">已发放</li>
-        </ul>
-        <ul class="clearfix">
-            <li class="fl prize_item">8.8代金券</li>
-            <li class="fl prize_item">2018.06.12</li>
-            <li class="fl prize_item">已发放</li>
-        </ul>
-        <ul class="clearfix">
-            <li class="fl prize_item">8.8代金券</li>
-            <li class="fl prize_item">2018.06.12</li>
-            <li class="fl prize_item">已发放</li>
-        </ul>
-    </div>
-</div>
-<div class="wrapper_layer" id="wrapper_layer">
-    <div class="wrapper">
-        <span class="close" id="close">×</span>
-        <div class="text-center  imgWrapper" style="margin-top: 10px;">
-            <img src="images/p_laugh.png" alt="">
-        </div>
-        <p class="text-center tips">恭喜你，球进了！</p>
-        <div class="user-operarion">
-            <a href="#" class="uo_btn">开始抽奖</a>
-            <a href="#" class="uo_btn">去下单</a>
-        </div>
-    </div>
-</div>
-<script>
-    var mySwiper = new Swiper('.swiper-container', {
-        autoplay: true,//可选选项，自动滑动
-        direction: 'vertical',
-        height: 266,
-        loop: true,
-        slidesPerView: 7
-    })
-    // 剩余多少时间
-    leftTimer(2018,7,7,19,57,10);
-    $('#rule').click(function () {
-        var rule_layer = $('.rule_layer');
-        rule_layer.show();
-        $('#close_rule').click(function () {
-            rule_layer.hide()
-        })
-    })
 
-    $('#prize').click(function () {
-        var prize_layer = $('.prize_layer');
-        prize_layer.show();
-        $('#close_prize').click(function () {
-            prize_layer.hide()
-        })
-    })
+	<head>
+		<meta charset="UTF-8">
+		<title>媒介圈-世界杯活动页面</title>
+		<link rel="stylesheet" href="css/swiper-4.2.0.min.css">
+		<link rel="stylesheet" href="css/p_reset.css">
+		<link rel="stylesheet" href="css/worldCup.css">
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/swiper-4.2.0.min.js"></script>
+		<script src="js/jquery.rotate.min.js"></script>
+		<style>
+			.g-content {
+				width: 100%;
+				height: auto;
+				position: relative;
+			}
+			
+			.g-content .bottom_cao {
+				position: absolute;
+				bottom: -93px;
+				left: 108px;
+			}
+			
+			.g-content .g-lottery-case {
+				width: 538px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			
+			.g-content .g-lottery-case .g-left h2 {
+				font-size: 20px;
+				line-height: 32px;
+				font-weight: normal;
+				margin-left: 20px;
+			}
+			
+			.g-content .g-lottery-case .g-left {
+				float: left;
+			}
+			
+			.g-lottery-box {
+				width: 538px;
+				height: 538px;
+				position: relative;
+				background: url(images/ly-plate-c.png) no-repeat;
+			}
+			
+			.g-lottery-box .g-lottery-img {
+				width: 495px;
+				height: 495px;
+				position: relative;
+				background: url(images/bg-lottery.png) no-repeat;
+				top: 21.5px;
+				left: 21.5px;
+			}
+			
+			.g-lottery-box .playbtn {
+				width: 238px;
+				height: 251px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -116px;
+				margin-top: -116px;
+				background: url(images/playbtn.png) no-repeat;
+				cursor: pointer;
+			}
+		</style>
+	</head>
 
-    $('#close').click(function () {
-        $(this).closest('#wrapper_layer').hide()
-    })
+	<body>
+		<div class="world-top"></div>
+		<div class="world-main">
+			<div class="common_w world-main-con">
+				<div class="jiuqiu">
+					<div style="position: relative;height: 100%">
+						<div class="jinqiu_shoot" style="display: block;">
+							<img src="images/shootStart.png" alt="射门">
+						</div>
+						<!--<div class="jinqiu_shoot">-->
+						<!--<img src="images/shootJin.gif" alt="射门">-->
+						<!--</div>-->
+						<!--<div class="jinqiu_shoot">-->
+						<!--<img src="images/shootMeiJin.gif" alt="射门">-->
+						<!--</div>-->
+						<a href="javascript:void(0);" class="jinqiu_btn">
+							<p>今日踢球剩余次数：<span id="tiqiu_num">3</span>次</p>
+						</a>
+					</div>
+				</div>
+				<div class="clearfix">
+					<div class="fl zjWrapper">
+						<div class="zj_num clearfix">
+							<div class="num_item">
+								<img src="images/wc-icon1.png" alt=""> 已下单数：15次
+							</div>
+							<div class="num_item">
+								<img src="images/wc-icon2.png" alt=""> 已竞猜数：5次
+							</div>
+						</div>
+						<div class="g-content">
+							<div class="bottom_cao">
+								<img src="images/bottom_cao_03.png" alt="" />
+							</div>
+							<div class="g-lottery-case">
+								<div class="g-left">
+									<div class="g-lottery-box">
+										<div class="g-lottery-img">
+										</div>
+										<a class="playbtn" href="javascript:void(0)" title="点击抽奖"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl jpWrapper">
+						<div class="zj-warning clearfix">
+							<div class="fl zw-item" id="prize">
+								<p>我的奖品</p>
+							</div>
+							<div class="fl zw-item" id="rule">
+								<p>活动规则</p>
+							</div>
+						</div>
+						<p class="jp_num">今日抽奖次数：<span class="playnum"></span>次</p>
+						<div class="zjUserWrapper">
+							<div class="zuw_top"></div>
+							<div class="zuw_detail">
+								<div class="titleWrapper">
+									<div class="title">幸运中奖用户</div>
+								</div>
+								<div class="detailWrapper">
+									<ul class="clearfix">
+										<li class="fl dw-item dw-item-first">用户名</li>
+										<li class="fl dw-item dw-item-first">联系方式</li>
+										<li class="fl dw-item dw-item-first">奖品名称</li>
+									</ul>
+									<div class="swiper-container">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+												<ul class="clearfix">
+													<li class="fl dw-item">张1</li>
+													<li class="fl dw-item">139******321</li>
+													<li class="fl dw-item">10元代金券</li>
+												</ul>
+											</div>
+											<div class="swiper-slide">
+												<ul class="clearfix">
+													<li class="fl dw-item">张2</li>
+													<li class="fl dw-item">139******321</li>
+													<li class="fl dw-item">10元代金券</li>
+												</ul>
+											</div>
+											<div class="swiper-slide">
+												<ul class="clearfix">
+													<li class="fl dw-item">张3</li>
+													<li class="fl dw-item">139******321</li>
+													<li class="fl dw-item">10元代金券</li>
+												</ul>
+											</div>
+											<div class="swiper-slide">
+												<ul class="clearfix">
+													<li class="fl dw-item">张4</li>
+													<li class="fl dw-item">139******321</li>
+													<li class="fl dw-item">10元代金券</li>
+												</ul>
+											</div>
+											<div class="swiper-slide">
+												<ul class="clearfix">
+													<li class="fl dw-item">张5</li>
+													<li class="fl dw-item">139******321</li>
+													<li class="fl dw-item">10元代金券</li>
+												</ul>
+											</div>
+											<div class="swiper-slide">
+												<ul class="clearfix">
+													<li class="fl dw-item">张6</li>
+													<li class="fl dw-item">139******321</li>
+													<li class="fl dw-item">10元代金券</li>
+												</ul>
+											</div>
+											<div class="swiper-slide">
+												<ul class="clearfix">
+													<li class="fl dw-item">张7</li>
+													<li class="fl dw-item">139******321</li>
+													<li class="fl dw-item">10元代金券</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="world-guess">
+			<!--只竞猜一支队友时，判断使用class wg-content-one-->
+			<div class="common_w wg-content">
+				<div class="wg_cloud_left">
+					<img src="images/p_cloud.png" alt="云" />
+				</div>
+				<div class="wg_cloud_right">
+					<img src="images/p_cloud.png" alt="云" />
+				</div>
+				<div class="wg-title text-center">猜对有奖，瓜分万元！</div>
+				<p class="wg-text text-center">(连续竞猜正确3次，即可参加万元瓜分！没人仅可瓜分一次)</p>
+				<div class="wg-time">
+					<img src="images/time-daojishi.png" alt="沙漏" style="margin-top: -10px;">
+					<span style="position: relative;top: -4px;">瓜分倒计时：</span>
+					<p class="wg-time-daojishi" id="timer"><span>13</span>天<span>13</span>时<span>13</span>分<span>13</span>秒</p>
+				</div>
+				<div class="clearfix todayWrapper">
+					<div class="today-group fl">
+						<div class="today-group-con">
+							<div class="tg-title">
+								<h3>今日竞猜</h3>
+								<p class="text"><img src="images/guess_icon.png" alt="">竞猜截止日期2018-07-02 18：00：00</p>
+							</div>
+							<div class="guess-item">
+								<p class="bisai-project"><i>沙特阿拉伯<img src="images/team_03.png" alt=""></i><span>VS</span><i><img
+                                src="images/team_05.png" alt="">俄罗斯</i></p>
+								<div class="guess-touzhu clearfix">
+									<div class="guess-touzhu-choice">
+										<p class="text-center touzhu">3812注 68%</p>
+										<a href="javascript:void(0);" class="choice_btn first_team">沙特阿拉伯赢</a>
+									</div>
+									<div class="guess-touzhu-choice">
+										<p class="text-center touzhu">3812注 68%</p>
+										<a href="javascript:void(0);" class="choice_btn first_team acitve">俄罗斯赢</a>
+									</div>
+								</div>
+							</div>
+							<div class="guess-item">
+								<p class="bisai-project"><i>沙特阿拉伯<img src="images/team_03.png" alt=""></i><span>VS</span><i><img
+                                src="images/team_05.png" alt="">俄罗斯</i></p>
+								<div class="guess-touzhu clearfix">
+									<div class="guess-touzhu-choice">
+										<p class="text-center touzhu">3812注 68%</p>
+										<a href="javascript:void(0);" class="choice_btn second_team">沙特阿拉伯赢</a>
+									</div>
+									<div class="guess-touzhu-choice">
+										<p class="text-center touzhu">3812注 68%</p>
+										<a href="javascript:void(0);" class="choice_btn second_team selectedActive">俄罗斯赢</a>
+									</div>
+								</div>
+							</div>
+							<input type="button" value="立刻确认" class="guess_submit" />
+							<!--<input disabled="disabled" type="button" value="今日已竞猜" class="guess_submit" style="background:#b2b2b2;" />-->
+						</div>
+					</div>
+					<div class="today-group fl">
+						<div class="today-group-con">
+							<div class="tg-title">
+								<h3>今日开奖</h3>
+								<p class="text"><img src="images/guess_icon.png" alt="">已有<span style="color: #c31934">1234</span>人获得10000元红包瓜分机会</p>
+							</div>
+							<div class="guess-item">
+								<p class="bisai-project spec"><i>沙特阿拉伯<img src="images/team_03.png" alt=""></i><span>1:2</span><i><img
+                                src="images/team_05.png" alt="">俄罗斯</i></p>
+							</div>
+							<div class="guess-item">
+								<p class="bisai-project spec"><i>沙特阿拉伯<img src="images/team_03.png" alt=""></i><span>1:2</span><i><img
+                                src="images/team_05.png" alt="">俄罗斯</i></p>
+							</div>
+							<div class="myGuess">
+								<div class="mg-title">
+									<h3>我的竞猜</h3>
+									<p class="text">（已获得10000元红包瓜分机会）</p>
+								</div>
+								<ul class="myGuessContent">
+									<li>
+										<span>2018-07-02 14：24：12</span>
+										<span class="country">希腊</span>
+										<span class="guess">已猜中</span>
+									</li>
+									<li>
+										<span>2018-07-02 14：24：12</span>
+										<span class="country">希腊</span>
+										<span class="notguess">未猜中</span>
+									</li>
+									<li>
+										<span>2018-07-02 14：24：12</span>
+										<span class="country">希腊</span>
+										<span class="guessing">竞猜中</span>
+									</li>
+									<li>
+										<span>2018-07-02 14：24：12</span>
+										<span class="country">希腊</span>
+										<span class="guess">已猜中</span>
+									</li>
+									<li>
+										<span>2018-07-02 14：24：12</span>
+										<span class="country">希腊</span>
+										<span class="guess">已猜中</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="world_footer">
+			<p style="color: #666;" class="text-center">沪ICP备17019163号-6© Copyright 2015-2025上海华梁网络科技有限公司版权所有</p>
+		</div>
+		<div class="rule_layer">
+			<div class="rule_wrapper">
+				<div class="title">
+					活动规则
+					<span class="close_rule" id="close_rule">×</span>
+				</div>
+				<div class="group clearfix">
+					<div class="group-title fl">
+						活动时间：
+					</div>
+					<div class="group-text fl">
+						<p class="gt_xuanxiang">2018年7月1日-2018年7月15日</p>
+					</div>
+				</div>
+				<div class="group clearfix">
+					<div class="group-title fl">
+						踢球规则：
+					</div>
+					<div class="group-text fl">
+						<p class="gt_xuanxiang">1. 活动期间，点击踢球，进球成功的用户，可以参与抽奖。</p>
+						<p class="gt_xuanxiang">2. 踢球机会可通过4种途径获得：</p>
+						<p class="gt_desc">• 注册或登陆仅可赠送1次；</p>
+						<p class="gt_desc">• 每发布稿件(已付款)10次，可获赠1次，该渠道每日最多可获得5次。</p>
+						<p class="gt_desc">• 参与竞猜活动，则可获赠1次踢球机会；</p>
+						<p class="gt_desc">• 成功将活动页面分享至朋友圈，并保持不删除（加媒介圈-安琪微信：rws099 为好友验证）可获赠3次机会，该渠道在活动期间最多可获得3次机会；</p>
+					</div>
+				</div>
+				<div class="group clearfix">
+					<div class="group-title fl">
+						竞猜规则：
+					</div>
+					<div class="group-text fl">
+						<p class="gt_xuanxiang">1. 竞猜时间：07.01开始每日06：00-18：00</p>
+						<p class="gt_desc">（参与竞猜后，次日上午10：00公布竞猜结果）</p>
+						<p class="gt_xuanxiang">2. 用户每日可获得1次竞猜活动机会</p>
+						<p class="gt_xuanxiang">3.活动期间，连续竞猜正确3次，即可参与10000万元瓜分，每人仅可瓜分1次。</p>
+						<p class="gt_desc">（10000元现金将于7月16日09:00开始瓜分，将以现金红包的方式发送，请及时加”媒介圈——安琪（微信号：rws099）“为好友。</p>
+						<p class="gt_desc">如遇“10000元除不尽”的情况，则按照四舍五入法精确到角。）</p>
+					</div>
+				</div>
+				<div class="group clearfix">
+					<div class="group-title fl">
+						奖品说明：
+					</div>
+					<div class="group-text fl">
+						<p class="gt_xuanxiang">1. 获赠的代金券，有效期截止至7月16日。过期不用则自动作废。 </p>
+						<p class="gt_xuanxiang">2. 所有代金券奖品将由系统即时自动发放，现金红包等将由工作人员联系登记之后，统一在活动结束后3个工作日内发放。</p>
+						<p class="gt_xuanxiang">3. 创意内容撰写奖励将由工作人员联系后，根据相应的需求进行内容创意策划与撰写。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="prize_layer">
+			<div class="prize_wrapper">
+				<div class="title">
+					我的奖品
+					<span class="close_prize" id="close_prize">×</span>
+				</div>
+				<ul class="clearfix">
+					<li class="fl prize_item prize_title">奖品名称</li>
+					<li class="fl prize_item prize_title">获得时间</li>
+					<li class="fl prize_item prize_title">状态</li>
+				</ul>
+				<ul class="clearfix">
+					<li class="fl prize_item">8.8代金券</li>
+					<li class="fl prize_item">2018.06.12</li>
+					<li class="fl prize_item">已发放</li>
+				</ul>
+				<ul class="clearfix">
+					<li class="fl prize_item">8.8代金券</li>
+					<li class="fl prize_item">2018.06.12</li>
+					<li class="fl prize_item">已发放</li>
+				</ul>
+				<ul class="clearfix">
+					<li class="fl prize_item">8.8代金券</li>
+					<li class="fl prize_item">2018.06.12</li>
+					<li class="fl prize_item">已发放</li>
+				</ul>
+				<ul class="clearfix">
+					<li class="fl prize_item">8.8代金券</li>
+					<li class="fl prize_item">2018.06.12</li>
+					<li class="fl prize_item">已发放</li>
+				</ul>
+				<ul class="clearfix">
+					<li class="fl prize_item">8.8代金券</li>
+					<li class="fl prize_item">2018.06.12</li>
+					<li class="fl prize_item">已发放</li>
+				</ul>
+				<ul class="clearfix">
+					<li class="fl prize_item">8.8代金券</li>
+					<li class="fl prize_item">2018.06.12</li>
+					<li class="fl prize_item">已发放</li>
+				</ul>
+			</div>
+		</div>
+		<div class="wrapper_layer" id="wrapper_layer">
+			<div class="wrapper">
+				<span class="close" id="close">×</span>
+				<div class="text-center  imgWrapper" style="margin-top: 10px;">
+					<img src="images/p_laugh.png" alt="">
+				</div>
+				<p class="text-center tips">恭喜你，球进了！</p>
+				<div class="user-operarion">
+					<a href="#" class="uo_btn">开始抽奖</a>
+					<a href="#" class="uo_btn">去下单</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper_layer zhongjiang_layer">
+			<div class="wrapper">
+				<span class="close zj_close">×</span>
+				<div class="text-center  imgWrapper" style="margin-top: 10px;">
+					<img src="images/p_laugh.png" alt="">
+				</div>
+				<p class="text-center tips" style="margin: 22px 0;"></p>
+				<p class="text-center" style="color:#666;margin-bottom: 20px;">还有 <span class="zj_number">0</span>次抽奖机会</p>
+				<div class="user-operarion">
+					<a href="javascript:void(0)" class="uo_btn zj_close">取消</a>
+					<a href="#" class="uo_btn">去下单</a>
+				</div>
+			</div>
+		</div>
+		<div class="invite_layer">
+			<div class="wrapper">
+				<span class="close" id="invite_close">×</span>
+				<div class="text_wrapper">
+					<p class="text">立即注册媒介圈，参与世界杯狂欢月，赢取精美奖品，赶紧看看哦。</p>
+					<p class="text text_copy">
+						<a style="color: #317307;" href="javascript:void(0)" id="targetUrl" value="https://mjq.chuanboke.net/login/index.html">https://mjq.chuanboke.net/login/index.html</a>
+					</p>
+					<div class="user-operarion">
+						<a href="javascript:void(0)" class="uo_btn" id="copy" data-clipboard-action="copy" data-clipboard-target="#targetUrl">复制链接</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/clipboard.min.js"></script>
+		<script>
+			var mySwiper = new Swiper('.swiper-container', {
+				autoplay: true, //可选选项，自动滑动
+				direction: 'vertical',
+				height: 266,
+				loop: true,
+				slidesPerView: 7
+			})
+			
+			$('#rule').click(function() {
+				var rule_layer = $('.rule_layer');
+				rule_layer.show();
+				$('#close_rule').click(function() {
+					rule_layer.hide()
+				})
+			})
 
-    var goal_desc = [{text: '恭喜你，球进了！', imgUrl: 'images/p_laugh.png'}, {
-        text: '很遗憾，没有进球',
-        imgUrl: 'images/p_cry.png'
-    }];
-    // 点击踢球
-    $('.jinqiu_btn').click(function () {
-        // 获取踢球剩余次数
-        var tiqiu_num = $('#tiqiu_num').text();
-        if (tiqiu_num == 0) {
-            // 弹出提示显示
-            $('#tiqiu_num').text(tiqiu_num);
-            return false;
-        }
-        // 两种情况,进球和没进球的概率
-        var a = ['goal', 'no_goal'],
-            b = [0.3, 0.7],
-            is_goal = random(a, b);
-        imgReload();
-        if (is_goal == 'goal') {
-            $('.jinqiu_shoot').find('img').attr('src', 'images/shootJin.gif')
-            // 弹出进球提示框
-            setTimeout(function () {
-                $('#wrapper_layer').show().find('.imgWrapper img').attr('src', goal_desc[0].imgUrl)
-                    .end().find('.tips').text(goal_desc[0].text)
-            }, 1700)
-        } else {
-            $('.jinqiu_shoot').find('img').attr('src', 'images/shootMeiJin.gif')
-            // 弹出没进球提示框
-            setTimeout(function () {
-                $('#wrapper_layer').show().find('.imgWrapper img').attr('src', goal_desc[1].imgUrl)
-                    .end().find('.tips').text(goal_desc[1].text)
-            }, 1700)
-        }
-        tiqiu_num--;
-        $('#tiqiu_num').text(tiqiu_num);
-    })
+			$('#prize').click(function() {
+				var prize_layer = $('.prize_layer');
+				prize_layer.show();
+				$('#close_prize').click(function() {
+					prize_layer.hide()
+				})
+			})
 
-    function random(arr1, arr2) {
-        var sum = 0,
-            factor = 0,
-            random = Math.random();
+			$('#close').click(function() {
+				$(this).closest('#wrapper_layer').hide()
+			})
 
-        for (var i = arr2.length - 1; i >= 0; i--) {
-            sum += arr2[i]; // 统计概率总和
-        }
-        random *= sum; // 生成概率随机数
-        for (var i = arr2.length - 1; i >= 0; i--) {
-            factor += arr2[i];
-            if (random <= factor)
-                return arr1[i];
-        }
-        return null;
-    }
+			$('#invite_close').click(function() {
+				$(this).closest('.invite_layer').hide()
+			})
 
-    function imgReload() {
-        var imgs = document.getElementsByTagName('img');
-        for (var i = 0; i < imgs.length; i++)
-            imgs[i].src = imgs[i].src;
-    }
+			$('.zj_close').click(function() {
+				$(this).closest('.zhongjiang_layer').hide()
+			})
 
-    function leftTimer(year, month, day, hour, minute, second) {
-        var leftTime = (new Date(year, month - 1, day, hour, minute, second)) - (new Date()); //计算剩余的毫秒数
-        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
-        var hours = parseInt(leftTime / 1000 / 60 / 60 % 24, 10); //计算剩余的小时
-        var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟
-        var seconds = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数
-        days = checkTime(days);
-        hours = checkTime(hours);
-        minutes = checkTime(minutes);
-        seconds = checkTime(seconds);
-        setInterval("leftTimer(2018,7,7,19,57,10)", 1000);
-        document.getElementById("timer").innerHTML = '<span>' + days + '</span>' + "天" + '<span>' + hours + '</span>' + "时" + '<span>' + minutes + '</span>' + "分" + '<span>' + seconds + '</span>' + "秒";
-    }
+			$('.first_team').click(function() {
+				$('.first_team').removeClass('acitve');
+				$(this).addClass('acitve');
+			})
 
-    function checkTime(i) { //将0-9的数字前面加上0，例1变为01
-        if (i < 10) {
-            i = "0" + i;
-        }
-        return i;
-    }
-</script>
-</body>
+			$('.second_team').click(function() {
+				$('.second_team').removeClass('acitve');
+				$(this).addClass('acitve');
+			})
+			var copyHtml = {
+				init: function(attentionText) {
+					var obj = document.createElement('div'),
+						timer = null;
+					obj.style.cssText = 'background:rgba(0,0,0,.6);border-radius:6px;padding:15px 30px;color:#fff;position: fixed;left: 50%;top: 50%;position:fixed;z-index:999;margin-left:-79px;margin-top:-25.5px;';
+					obj.innerHTML = attentionText;
+					document.body.appendChild(obj);
+					// 间隔时间弹出区域消失
+					timer = setTimeout(function() {
+						obj.style.display = 'none';
+					}, 1000)
+				}
+			}
+			//  复制链接功能
+			var clipboard = new ClipboardJS('#copy');
+			clipboard.on('success', function(e) {
+				copyHtml.init('复制链接成功！');
+			});
+			clipboard.on('error', function(e) {
+				console.error('Action:', e.action);
+			});
+
+			var prize_desc = [{
+				goal_text: '恭喜你，球进了！',
+				imgUrl: 'images/p_laugh.png'
+			}, {
+				goal_text: '很遗憾，没有进球',
+				imgUrl: 'images/p_cry.png'
+			}];
+			// 点击踢球
+			$('.jinqiu_btn').click(function() {
+				// 获取踢球剩余次数
+				var tiqiu_num = $('#tiqiu_num').text();
+				if(tiqiu_num == 0) {
+					// 弹出提示显示
+					$('#tiqiu_num').text(tiqiu_num);
+					return false;
+				}
+				// 两种情况,进球和没进球的概率
+				var a = ['goal', 'no_goal'],
+					b = [0.1, 0.9],
+					is_goal = random(a, b);
+				imgReload();
+				if(is_goal == 'goal') {
+					$('.jinqiu_shoot').find('img').attr('src', 'images/shootJin.gif')
+					// 弹出进球提示框
+					setTimeout(function() {
+						$('#wrapper_layer').show().find('.imgWrapper img').attr('src', prize_desc[0].imgUrl)
+							.end().find('.tips').text(prize_desc[0].goal_text)
+					}, 1700)
+				} else {
+					$('.jinqiu_shoot').find('img').attr('src', 'images/shootMeiJin.gif')
+					// 弹出没进球提示框
+					setTimeout(function() {
+						$('#wrapper_layer').show().find('.imgWrapper img').attr('src', prize_desc[1].imgUrl)
+							.end().find('.tips').text(prize_desc[1].goal_text)
+					}, 1700)
+				}
+				tiqiu_num--;
+				$('#tiqiu_num').text(tiqiu_num);
+			})
+
+			function random(arr1, arr2) {
+				var sum = 0,
+					factor = 0,
+					random = Math.random();
+
+				for(var i = arr2.length - 1; i >= 0; i--) {
+					sum += arr2[i]; // 统计概率总和
+				}
+				random *= sum; // 生成概率随机数
+				for(var i = arr2.length - 1; i >= 0; i--) {
+					factor += arr2[i];
+					if(random <= factor)
+						return arr1[i];
+				}
+				return null;
+			}
+
+			function imgReload() {
+				var imgs = document.getElementsByTagName('img');
+				for(var i = 0; i < imgs.length; i++)
+					imgs[i].src = imgs[i].src;
+			}
+			
+		</script>
+		<script>
+			$(function() {
+				var $btn = $('.g-lottery-img'); // 旋转的div
+				var playnum = 5; //初始次数，由后台传入
+				$('.playnum').html(playnum); //显示还剩下多少次抽奖机会
+				var isture = 0; //是否正在抽奖
+				function clickfunc() {
+					var data = [1, 2, 3, 4, 5, 6, 7, 8]; //抽奖
+					//data为随机出来的结果，根据概率后的结果
+					data = data[Math.floor(Math.random() * data.length)]; //1~6的随机数
+					switch(data) {
+						case 1:
+							rotateFunc(1, -20, '指定媒体任意免费发稿一次');
+							break;
+						case 2:
+							rotateFunc(2, 22.5, '感谢参与');
+							break;
+						case 3:
+							rotateFunc(3, 70, '10元代金券');
+							break;
+						case 4:
+							rotateFunc(4, 110, '有口皆碑套餐5折券');
+							break;
+						case 5:
+							rotateFunc(5, 175, '千城联播免费发稿一次');
+							break;
+						case 6:
+							rotateFunc(6, -150, '5元代金券');
+							break;
+						case 7:
+							rotateFunc(7, -100, '创意内容撰写1次');
+							break;
+						case 8:
+							rotateFunc(8, -50, '20元代金券');
+							break;
+					}
+				}
+				$(".playbtn").click(function() {
+					if(isture) return; // 如果在执行就退出
+					isture = true; // 标志为 在执行
+					if(playnum <= 0) { //当抽奖次数为0的时候执行
+						alert("没有次数了");
+						$('.playnum').html(0); //次数显示为0
+						isture = false;
+					} else { //还有次数就执行
+						playnum = playnum - 1; //执行转盘了则次数减1
+						if(playnum <= 0) {
+							playnum = 0;
+						}
+						$('.playnum').html(playnum);
+						clickfunc();
+					}
+				});
+
+				var zj_layer = $('.zhongjiang_layer');
+
+				function rotateFunc(awards, angle, text) {
+					isture = true;
+					$btn.stopRotate();
+					$btn.rotate({
+						angle: 0, //旋转的角度数
+						duration: 4000, //旋转时间
+						animateTo: angle + 1440, //给定的角度,让它根据得出来的结果加上1440度旋转
+						callback: function() {
+							console.log(prize_desc[1].imgUrl)
+							isture = false; // 标志为 执行完毕
+							zj_layer.show();
+							if(text !== '感谢参与') {
+								zj_layer.find('.tips').html('恭喜你，获得' + text);
+								zj_layer.find('.imgWrapper').find('img').attr('src',prize_desc[0].imgUrl)
+							} else {
+								zj_layer.find('.tips').html('很遗憾，没有中奖');
+								zj_layer.find('.imgWrapper').find('img').attr('src',prize_desc[1].imgUrl)
+							}
+							zj_layer.find('.zj_number').text($('.playnum').text())
+						}
+					});
+				};
+			})
+		</script>
+	</body>
+
 </html>
