@@ -211,7 +211,8 @@
         <div class="wg-time">
             <img src="images/time-daojishi.png" alt="沙漏" style="margin-top: -10px;">
             <span style="position: relative;top: -4px;">瓜分倒计时：</span>
-            <p class="wg-time-daojishi count_down"><span class="day_num"></span><span class="hour_num"></span><span class="min_num"></span><span class="sec_num"></span></p>
+            <p class="wg-time-daojishi count_down"><span class="day_num"></span><span class="hour_num"></span><span
+                    class="min_num"></span><span class="sec_num"></span></p>
         </div>
         <div class="clearfix todayWrapper">
             <div class="today-group fl">
@@ -529,10 +530,12 @@
 
     var prize_desc = [{
         goal_text: '恭喜你，球进了！',
-        imgUrl: 'images/p_laugh.png'
+        imgUrl: 'images/p_laugh.png',
+        shootUrl: 'images/shootJin.gif'
     }, {
         goal_text: '很遗憾，没有进球',
-        imgUrl: 'images/p_cry.png'
+        imgUrl: 'images/p_cry.png',
+        shootUrl: 'images/shootMeiJin.gif'
     }];
     // 点击踢球
     $('.jinqiu_btn').click(function () {
@@ -549,14 +552,14 @@
             is_goal = random(a, b);
         imgReload();
         if (is_goal == 'goal') {
-            $('.jinqiu_shoot').find('img').attr('src', 'images/shootJin.gif')
+            $('.jinqiu_shoot').find('img').attr('src', prize_desc[0].shootUrl)
             // 弹出进球提示框
             setTimeout(function () {
                 $('#wrapper_layer').show().find('.imgWrapper img').attr('src', prize_desc[0].imgUrl)
                     .end().find('.tips').text(prize_desc[0].goal_text)
             }, 1700)
         } else {
-            $('.jinqiu_shoot').find('img').attr('src', 'images/shootMeiJin.gif')
+            $('.jinqiu_shoot').find('img').attr('src', prize_desc[1].shootUrl)
             // 弹出没进球提示框
             setTimeout(function () {
                 $('#wrapper_layer').show().find('.imgWrapper img').attr('src', prize_desc[1].imgUrl)
